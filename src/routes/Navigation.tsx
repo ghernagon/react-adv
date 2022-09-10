@@ -6,6 +6,7 @@ import logo from '../logo.svg';
 
 export const Navigation = () => {
     return (
+        // Suspense is used to hold lazy loading
         <Suspense fallback={ <span>Loading...</span> }>
             <BrowserRouter>
                 <div className="main-layout">
