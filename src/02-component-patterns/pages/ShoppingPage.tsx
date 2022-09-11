@@ -1,4 +1,5 @@
-import { ProductCard } from "../components/ProductCard"
+import { ProductCard, ProductImage, ProductTitle, ProductButtons } from "../components"
+
 
 const product = {
   id: '1',
@@ -9,15 +10,30 @@ const product = {
 export const ShoppingPage = () => {
   return (
     <div>
-        <h1>Shopping Page</h1>
-        <hr />
-        <div style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap'
-        }}>
-          <ProductCard product={product} />
-        </div>
+      <h1>Shopping Page</h1>
+      <hr />
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+      }}>
+
+        {/* Compound Component Pattern */}
+        {/* Permite crear componentes hijos y establecer relacion directa entre ellos */}
+        {/* Las propiedades internas son heredadas desde el padre y se pueden sobreescribir en cada componente */}
+        
+        <ProductCard product={product} >
+          <ProductCard.Image />
+          <ProductCard.Title />
+          <ProductCard.Buttons />
+        </ProductCard>
+
+        <ProductCard product={product} >
+          <ProductImage />
+          <ProductTitle title={'Cafe'} />
+          <ProductButtons />
+        </ProductCard>
+      </div>
     </div>
   )
 }
