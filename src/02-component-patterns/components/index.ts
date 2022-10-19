@@ -1,5 +1,5 @@
 import { ProductCard as ProductCardCHOC } from './ProductCard';
-import { ProductCardHOCProps } from '../interfaces/products.interfaces';
+import { ProductCardHOCProps } from '../interfaces/interfaces';
 
 import { ProductButtons } from './ProductButtons';
 import { ProductImage } from './ProductImage';
