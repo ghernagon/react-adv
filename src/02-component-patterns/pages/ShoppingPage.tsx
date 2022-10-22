@@ -4,7 +4,6 @@ import {
     ProductTitle,
     ProductButtons,
 } from "../components";
-import "../styles/custon-styles.css";
 import {products} from "../data/products";
 
 export const ShoppingPage = () => {
@@ -22,7 +21,6 @@ export const ShoppingPage = () => {
             <ProductCard
                 key={product.id}
                 product={product}
-                className="bg-dark text-white"
                 initialValues={{
                     count: 4,
                     maxCount: 10,
@@ -31,16 +29,9 @@ export const ShoppingPage = () => {
                 {
                     ({ reset, isMaxCountReached, count, increaseBy }) => (
                         <>
-                            <ProductImage className="custom-image"/>
-                            <ProductTitle title={"Cafe"} className="bold-text"/>
-                            <ProductButtons className="custom-buttons"/>
-
-                            <button onClick={ reset }>Reset</button>
-                            <button onClick={ () => increaseBy(-2) }>-2</button>
-                            {
-                                (!isMaxCountReached && <button onClick={ () => increaseBy(2) }>+2</button>)
-                            }
-                            <span>{count}</span>
+                            <ProductImage />
+                            <ProductTitle />
+                            <ProductButtons />
                         </>
                     )
                 }
